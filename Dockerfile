@@ -20,6 +20,7 @@ RUN sleep 31                                                                    
  && make DESTDIR=/tmp/freetype2 install                                                        \
  && rm -rf                                                                       freetype2     \
  && cd           /tmp/freetype2                                                                \
+ && strip.sh .                                                                                 \
  && tar acf        ../freetype2.txz .                                                          \
  && cd ..                                                                                      \
  && rm -rf       /tmp/freetype2
