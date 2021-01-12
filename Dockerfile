@@ -25,3 +25,6 @@ RUN sleep 31                                                                    
  && cd ..                                                                                      \
  && rm -rf       /tmp/freetype2
 
+FROM scratch as final
+COPY --from=builder-01 /tmp/freetype2.txz /tmp/
+
