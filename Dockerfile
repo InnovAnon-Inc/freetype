@@ -1,4 +1,5 @@
 FROM innovanon/xorg-base:latest as builder-01
+USER root
 #COPY --from=innovanon/libxcb      /tmp/libxcb.txz      /tmp/
 #RUN cat   /tmp/*.txz  \
 #  | tar Jxf - -i -C / \
@@ -21,7 +22,7 @@ RUN sleep 31                                                                    
  && rm -rf                                                                       freetype2     \
  && cd           /tmp/freetype2                                                                \
  && strip.sh .                                                                                 \
- && tar acf        ../freetype2.txz .                                                          \
+ && tar  pacf        ../freetype2.txz .                                                          \
  && cd ..                                                                                      \
  && rm -rf       /tmp/freetype2
 
